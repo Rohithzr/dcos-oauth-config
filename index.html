@@ -1,87 +1,66 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="This page generates the encoded string needed to be entered in DC/OS Custom Login Page">
-    <meta name="author" content="Rohit Hazra<rohithzr@live.com>">
-    
-
-    <title>DC/OS Custom Auth0 config Encoder</title>
-
-     <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
-
-
-    <!-- Custom styles for this template -->
-    <link href="css/cover.css" rel="stylesheet">
-
-    <style type="text/css">
-    	@media (min-width: 48em) {
-		  .masthead-brand {
-		    float: none;
-		  }
-		}
-		.encoded_string:{
-			width: 100%; 
-			height: 100%;
-			display: block;
-		}
-
-    </style>
-	</head>
-	  <body>
-	    <div class="site-wrapper">
-	      <div class="site-wrapper-inner">
-	        <div class="cover-container">
-	          <div class="masthead clearfix">
-	            <div class="inner">
-	              <h3 class="masthead-brand">DC/OS Custom Auth0 config Encoder</h3>
-	            </div>
-	          </div>
-	          <div class="inner cover">
-	            <h1 class="cover-heading">Enter your Data from Auth0</h1>
-	            <p class="lead">
-		            <div class="row">
-		  				<div class="col-md-12">
-		  					<form>
-		  						<div class="form-group">
-								    <label for="auth0Domain">Your Auth0 Domain</label>
-								    <input type="text" class="form-control" id="auth0Domain" placeholder="auth0Domain">
-								</div>
-								<div class="form-group">
-								    <label for="clientID">Your Auth0 Client ID</label>
-								    <input type="text" class="form-control" id="clientID" placeholder="clientID">
-								</div>
-								<button onclick="generate();" type="button" class="btn btn-primary">Generate</button>
-		  					</form>		
-		  				</div>
-		  			</div>
-		  		</p>
-	          </div>
-
-	          <div class="mastfoot">
-	            <div class="inner">
-	              <p>Cover template for <a target="_blank" href="https://getbootstrap.com">Bootstrap</a>, by <a target="_blank" href="https://twitter.com/mdo">@mdo</a>.</p>
-	              <p>This page generates the encoded string needed to be entered in <a target="_blank" href="https://dcos.io">DC/OS</a> Custom Login Page, by <a target="_blank" href="https://github.com/rohithzr">@Rohithzr</a>.</p>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-		<script>
-		function generate() {
-			var domain = document.getElementById("auth0Domain").value;
-			var client = document.getElementById("clientID").value;
-		    var str = '{"auth0Domain":"'+domain+'","callbackOnLocationHash":false,"callbackURL":"","cdn":"https://sdk.auth0.com/","clientID":"'+client+'","dict":{"signin":{"title":"DC/OS"}},"extraParams":{"_csrf":"KlTaeeAe-d7mYvRifPyWCyvvj7Xyd9hSCF54"},"internalOptions":{"_csrf":"KlTaeeAe-d7mYvRifPyWCyvvj7Xyd9hSCF54"},"prompt":false,"widgetUrl":"https://cdn.auth0.com/w2/auth0-widget-5.1.min.js","isThirdPartyClient":false}';
-		    var enc = window.btoa(str);
-		    //document.getElementById("encoded_string").innerHTML = enc;
-		    copyToClipboard(enc);
-		}
-		function copyToClipboard(text) {
-		  window.prompt("Copy Encoded String to clipboard: Ctrl+C, Enter", text);
-		}
-		</script>
-	</body>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="This page generates the encoded string needed to be entered in DC/OS Custom Login Page">
+      <meta name="author" content="Rohit Hazra<rohithzr@live.com>">
+      <title>DC/OS Custom Auth0 config Encoder</title>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+      <!-- Custom styles for this template -->
+      <link href="css/cover.css" rel="stylesheet">
+   </head>
+   <body>
+      <div class="site-wrapper">
+         <div class="site-wrapper-inner">
+            <div class="cover-container">
+               <div class="masthead clearfix">
+                  <div class="inner">
+                     <h3 class="masthead-brand">DC/OS Custom Auth0 config Encoder</h3>
+                  </div>
+               </div>
+               <div class="inner cover">
+                  <h1 class="cover-heading">Enter your Data from Auth0</h1>
+                  <p class="lead">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <form>
+                           <div class="form-group">
+                              <label for="auth0Domain">Your Auth0 Domain</label>
+                              <input type="text" class="form-control" id="auth0Domain" placeholder="auth0Domain">
+                           </div>
+                           <div class="form-group">
+                              <label for="clientID">Your Auth0 Client ID</label>
+                              <input type="text" class="form-control" id="clientID" placeholder="clientID">
+                           </div>
+                           <button onclick="generate();" type="button" class="btn btn-primary">Generate</button>
+                        </form>
+                     </div>
+                  </div>
+                  </p>
+               </div>
+               <div class="mastfoot">
+                  <div class="inner">
+                     <p>Cover template for <a target="_blank" href="https://getbootstrap.com">Bootstrap</a>, by <a target="_blank" href="https://twitter.com/mdo">@mdo</a>.</p>
+                     <p>This page generates the encoded string needed to be entered in <a target="_blank" href="https://dcos.io">DC/OS</a> Custom Login Page, by <a target="_blank" href="https://github.com/rohithzr">@Rohithzr</a>.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script>
+         function generate() {
+         	var domain = document.getElementById("auth0Domain").value;
+         	var client = document.getElementById("clientID").value;
+             var str = '{"auth0Domain":"'+domain+'","callbackOnLocationHash":false,"callbackURL":"","cdn":"https://sdk.auth0.com/","clientID":"'+client+'","dict":{"signin":{"title":"DC/OS"}},"extraParams":{"_csrf":"KlTaeeAe-d7mYvRifPyWCyvvj7Xyd9hSCF54"},"internalOptions":{"_csrf":"KlTaeeAe-d7mYvRifPyWCyvvj7Xyd9hSCF54"},"prompt":false,"widgetUrl":"https://cdn.auth0.com/w2/auth0-widget-5.1.min.js","isThirdPartyClient":false}';
+             var enc = window.btoa(str);
+             //document.getElementById("encoded_string").innerHTML = enc;
+             copyToClipboard(enc);
+         }
+         function copyToClipboard(text) {
+           window.prompt("Copy Encoded String to clipboard: Ctrl+C, Enter", text);
+         }
+      </script>
+   </body>
 </html>
